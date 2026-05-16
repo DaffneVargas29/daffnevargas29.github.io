@@ -3,149 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daffne Vargas | Business Intelligence & Financial Analytics</title>
+  <title>Daffne Vargas | BI & Financial Analytics</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-soft: #11182d;
-      --card: #151d34;
-      --text: #f4f7fb;
-      --muted: #aeb8c8;
+      --bg: #070b16;
+      --bg-2: #0b1224;
+      --card: rgba(18, 28, 52, 0.82);
+      --card-2: rgba(12, 19, 37, 0.92);
+      --text: #f5f7fb;
+      --muted: #aab6c8;
+      --soft: #dbeafe;
       --accent: #38bdf8;
       --accent-2: #2563eb;
-      --border: rgba(255,255,255,0.09);
+      --accent-3: #7dd3fc;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 30px 90px rgba(0,0,0,.35);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Inter, Arial, sans-serif;
-      background: radial-gradient(circle at top left, rgba(56,189,248,.16), transparent 34%), var(--bg);
+      background:
+        radial-gradient(circle at 12% 12%, rgba(56,189,248,.20), transparent 26%),
+        radial-gradient(circle at 80% 2%, rgba(37,99,235,.20), transparent 28%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
     }
 
     a { color: inherit; text-decoration: none; }
-
-    .container { width: min(1120px, 92%); margin: auto; }
+    .container { width: min(1180px, 92%); margin: auto; }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(11,16,32,.78);
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,11,22,.78);
       border-bottom: 1px solid var(--border);
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
-    }
-
-    .logo { font-weight: 800; letter-spacing: .4px; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+    .logo { font-weight: 900; letter-spacing: .4px; font-size: 18px; }
     .logo span { color: var(--accent); }
-
-    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 14px; }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: 14px; }
     .nav-links a:hover { color: var(--accent); }
 
     .hero {
-      min-height: 86vh;
+      min-height: 92vh;
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 44px;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 58px;
       align-items: center;
-      padding: 70px 0;
+      padding: 84px 0 64px;
     }
 
     .eyebrow {
       color: var(--accent);
-      font-weight: 700;
-      letter-spacing: 3px;
+      font-weight: 800;
+      letter-spacing: 4px;
       text-transform: uppercase;
       font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(44px, 7vw, 82px);
-      line-height: .96;
-      letter-spacing: -2px;
       margin-bottom: 22px;
     }
 
-    .hero p {
-      color: var(--muted);
-      font-size: 19px;
-      max-width: 650px;
-      margin-bottom: 28px;
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .95;
+      letter-spacing: -2.8px;
+      margin-bottom: 24px;
     }
+
+    .hero p { color: var(--soft); font-size: 19px; max-width: 680px; margin-bottom: 30px; }
+    .gradient-text { background: linear-gradient(135deg, #fff, var(--accent-3)); -webkit-background-clip: text; color: transparent; }
 
     .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-
     .btn {
-      padding: 13px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 13px 19px; border-radius: 999px;
+      border: 1px solid rgba(56,189,248,.28);
       background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      font-weight: 700;
+      font-weight: 800; box-shadow: 0 16px 42px rgba(37,99,235,.24);
     }
+    .btn.secondary { background: rgba(255,255,255,.03); color: var(--soft); box-shadow: none; }
 
-    .btn.secondary { background: transparent; color: var(--muted); }
-
+    .profile-wrap { position: relative; }
+    .profile-wrap::before {
+      content: ""; position: absolute; inset: -24px; z-index: -1;
+      border-radius: 36px; background: linear-gradient(135deg, rgba(56,189,248,.28), transparent 55%);
+      filter: blur(3px);
+    }
     .profile-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow: 0 25px 70px rgba(0,0,0,.26);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+      border: 1px solid var(--border); border-radius: 30px; padding: 24px;
+      box-shadow: var(--shadow);
     }
+    .profile-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); }
 
-    .profile-card img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-    }
+    .mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+    .stat { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+    .stat strong { display: block; font-size: 22px; color: var(--accent); }
+    .stat span { font-size: 12px; color: var(--muted); }
 
-    section { padding: 70px 0; }
-    .section-title { font-size: 38px; margin-bottom: 10px; }
-    .section-subtitle { color: var(--muted); margin-bottom: 28px; max-width: 700px; }
+    section { padding: 82px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin-bottom: 30px; }
+    .section-title { font-size: clamp(34px, 4vw, 46px); letter-spacing: -1px; }
+    .section-subtitle { color: var(--muted); max-width: 720px; }
     .slash { color: var(--accent); }
 
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .card {
-      background: rgba(21,29,52,.78);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 22px;
-      min-height: 160px;
+      background: var(--card); border: 1px solid var(--border); border-radius: 24px;
+      padding: 24px; min-height: 180px; box-shadow: 0 18px 55px rgba(0,0,0,.16);
+      transition: transform .25s ease, border-color .25s ease;
     }
-
-    .card h3 { margin-bottom: 10px; font-size: 20px; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.36); }
+    .card h3 { margin-bottom: 10px; font-size: 21px; }
     .card p { color: var(--muted); font-size: 15px; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-    .tag { font-size: 12px; color: #cfeeff; border: 1px solid rgba(56,189,248,.25); padding: 6px 9px; border-radius: 999px; background: rgba(56,189,248,.07); }
 
-    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .skill { padding: 18px; border-radius: 18px; background: var(--card); border: 1px solid var(--border); color: var(--text); font-weight: 700; }
-    .skill small { display: block; color: var(--accent); margin-top: 4px; font-weight: 600; }
+    .icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; background: rgba(56,189,248,.12); color: var(--accent); margin-bottom: 16px; font-weight: 900; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag { font-size: 12px; color: #d9f4ff; border: 1px solid rgba(56,189,248,.25); padding: 6px 10px; border-radius: 999px; background: rgba(56,189,248,.08); }
+
+    .project-card { padding: 0; overflow: hidden; }
+    .project-img {
+      height: 150px; background:
+        linear-gradient(135deg, rgba(56,189,248,.18), rgba(37,99,235,.10)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 26px);
+      border-bottom: 1px solid var(--border); display: grid; place-items: center; color: var(--accent-3); font-weight: 900; letter-spacing: 2px;
+    }
+    .project-body { padding: 24px; }
+
+    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .skill { padding: 18px; border-radius: 20px; background: var(--card); border: 1px solid var(--border); font-weight: 800; }
+    .skill small { display: block; color: var(--accent); margin-top: 5px; font-weight: 700; }
 
     .timeline { display: grid; gap: 16px; }
-    .timeline-item { border-left: 3px solid var(--accent); padding: 18px 22px; background: rgba(21,29,52,.6); border-radius: 0 18px 18px 0; }
-    .timeline-item span { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+    .timeline-item { position: relative; border-left: 3px solid var(--accent); padding: 20px 24px; background: rgba(18,28,52,.72); border-radius: 0 20px 20px 0; }
+    .timeline-item span { color: var(--accent); font-size: 13px; font-weight: 900; letter-spacing: 1.6px; }
     .timeline-item p { color: var(--muted); margin-top: 8px; }
 
-    footer { padding: 46px 0; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+    .contact-box {
+      background: linear-gradient(135deg, rgba(56,189,248,.14), rgba(37,99,235,.07));
+      border: 1px solid rgba(56,189,248,.22); border-radius: 28px; padding: 34px;
+      display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+    }
 
-    @media (max-width: 860px) {
-      .hero, .grid { grid-template-columns: 1fr; }
+    footer { padding: 42px 0; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+
+    @media (max-width: 900px) {
+      .hero, .grid, .contact-box { grid-template-columns: 1fr; }
       .skills { grid-template-columns: repeat(2, 1fr); }
       .nav-links { display: none; }
+      .mini-stats { grid-template-columns: 1fr; }
+      section { padding: 58px 0; }
     }
   </style>
 </head>
@@ -153,11 +179,12 @@
   <header>
     <div class="container">
       <nav>
-        <div class="logo">Daffne<span>Vargas</span></div>
+        <a class="logo" href="#inicio">Daffne<span>Vargas</span></a>
         <div class="nav-links">
           <a href="#sobre-mi">Sobre mí</a>
           <a href="#proyectos">Proyectos</a>
           <a href="#habilidades">Habilidades</a>
+          <a href="#trayectoria">Trayectoria</a>
           <a href="#contacto">Contacto</a>
         </div>
       </nav>
@@ -165,38 +192,62 @@
   </header>
 
   <main class="container">
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div>
         <div class="eyebrow">Business Intelligence · Finanzas · Datos</div>
-        <h1>Hola, soy<br>Daffne Vargas</h1>
+        <h1>Hola, soy<br><span class="gradient-text">Daffne Vargas</span></h1>
         <p>Estudiante de Ingeniería Comercial en la UTFSM, orientada al análisis de datos, Business Intelligence, finanzas y automatización de procesos. Me interesa transformar información en indicadores útiles para la toma de decisiones.</p>
         <div class="buttons">
           <a class="btn" href="#proyectos">Ver proyectos</a>
           <a class="btn secondary" href="mailto:daffnevargas29@gmail.com">Contactar</a>
         </div>
       </div>
-      <div class="profile-card">
-        <img src="daffne_github_profile.jpg" alt="Foto profesional de Daffne Vargas" />
+      <div class="profile-wrap">
+        <div class="profile-card">
+          <img src="daffne_github_profile.jpg" alt="Foto profesional de Daffne Vargas" />
+          <div class="mini-stats">
+            <div class="stat"><strong>BI</strong><span>Enfoque profesional</span></div>
+            <div class="stat"><strong>UTFSM</strong><span>Ingeniería Comercial</span></div>
+            <div class="stat"><strong>Data</strong><span>Finanzas & reporting</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="sobre-mi">
-      <h2 class="section-title"><span class="slash">/</span> Sobre mí</h2>
-      <p class="section-subtitle">Busco construir un perfil profesional fuerte para áreas de banca, reporting, análisis financiero y Business Intelligence.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title"><span class="slash">/</span> Sobre mí</h2>
+          <p class="section-subtitle">Busco construir un perfil profesional fuerte para áreas de banca, reporting, análisis financiero y Business Intelligence.</p>
+        </div>
+      </div>
       <div class="grid">
-        <div class="card"><h3>Enfoque profesional</h3><p>Análisis de datos, reporting ejecutivo, indicadores de gestión y apoyo a decisiones de negocio.</p></div>
-        <div class="card"><h3>Perfil académico</h3><p>Estudiante de Ingeniería Comercial en la Universidad Técnica Federico Santa María.</p></div>
-        <div class="card"><h3>Objetivo</h3><p>Prepararme para práctica y primeras experiencias en banca, finanzas, BI o analítica comercial.</p></div>
+        <div class="card"><div class="icon">01</div><h3>Enfoque profesional</h3><p>Análisis de datos, reporting ejecutivo, indicadores de gestión y apoyo a decisiones de negocio.</p></div>
+        <div class="card"><div class="icon">02</div><h3>Perfil académico</h3><p>Estudiante de Ingeniería Comercial en la Universidad Técnica Federico Santa María, con interés en finanzas y datos.</p></div>
+        <div class="card"><div class="icon">03</div><h3>Objetivo</h3><p>Prepararme para práctica y primeras experiencias en banca, finanzas, BI o analítica comercial.</p></div>
       </div>
     </section>
 
     <section id="proyectos">
-      <h2 class="section-title"><span class="slash">/</span> Proyectos destacados</h2>
-      <p class="section-subtitle">Estos proyectos se irán completando con dashboards, análisis universitarios y casos de negocio.</p>
+      <div class="section-head">
+        <div>
+          <h2 class="section-title"><span class="slash">/</span> Proyectos destacados</h2>
+          <p class="section-subtitle">Proyectos pensados para mostrar criterio de negocio, análisis y visualización de información.</p>
+        </div>
+      </div>
       <div class="grid">
-        <article class="card"><h3>Dashboard financiero</h3><p>Visualización de KPIs financieros para seguimiento de ingresos, costos y rentabilidad.</p><div class="tag-row"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Finanzas</span></div></article>
-        <article class="card"><h3>Análisis comercial</h3><p>Reporte de ventas, clientes y productos para detectar patrones y oportunidades de mejora.</p><div class="tag-row"><span class="tag">Excel</span><span class="tag">KPIs</span><span class="tag">BI</span></div></article>
-        <article class="card"><h3>Base de datos SQL</h3><p>Consultas para limpiar, ordenar y analizar información de negocio desde una base relacional.</p><div class="tag-row"><span class="tag">SQL</span><span class="tag">Datos</span><span class="tag">Reporting</span></div></article>
+        <article class="card project-card">
+          <div class="project-img">DASHBOARD</div>
+          <div class="project-body"><h3>Dashboard financiero</h3><p>Visualización de KPIs financieros para seguimiento de ingresos, costos y rentabilidad.</p><div class="tag-row"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Finanzas</span></div></div>
+        </article>
+        <article class="card project-card">
+          <div class="project-img">KPIs</div>
+          <div class="project-body"><h3>Análisis comercial</h3><p>Reporte de ventas, clientes y productos para detectar patrones y oportunidades de mejora.</p><div class="tag-row"><span class="tag">Excel</span><span class="tag">KPIs</span><span class="tag">BI</span></div></div>
+        </article>
+        <article class="card project-card">
+          <div class="project-img">SQL</div>
+          <div class="project-body"><h3>Base de datos SQL</h3><p>Consultas para limpiar, ordenar y analizar información de negocio desde una base relacional.</p><div class="tag-row"><span class="tag">SQL</span><span class="tag">Datos</span><span class="tag">Reporting</span></div></div>
+        </article>
       </div>
     </section>
 
@@ -215,7 +266,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="trayectoria">
       <h2 class="section-title"><span class="slash">/</span> Trayectoria</h2>
       <div class="timeline">
         <div class="timeline-item"><span>ACTUALIDAD</span><h3>Ingeniería Comercial · UTFSM</h3><p>Formación en economía, gestión, contabilidad, datos y análisis para negocios.</p></div>
@@ -224,12 +275,16 @@
     </section>
 
     <section id="contacto">
-      <h2 class="section-title"><span class="slash">/</span> Contacto</h2>
-      <p class="section-subtitle">Disponible para conversar sobre práctica, proyectos de análisis de datos, BI, finanzas y oportunidades laborales.</p>
-      <div class="buttons">
-        <a class="btn" href="mailto:daffnevargas29@gmail.com">daffnevargas29@gmail.com</a>
-        <a class="btn secondary" href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">LinkedIn</a>
-        <a class="btn secondary" href="https://github.com/DaffneVargas29" target="_blank">GitHub</a>
+      <div class="contact-box">
+        <div>
+          <h2 class="section-title"><span class="slash">/</span> Contacto</h2>
+          <p class="section-subtitle">Disponible para conversar sobre práctica, proyectos de análisis de datos, BI, finanzas y oportunidades laborales.</p>
+        </div>
+        <div class="buttons">
+          <a class="btn" href="mailto:daffnevargas29@gmail.com">Correo</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">LinkedIn</a>
+          <a class="btn secondary" href="https://github.com/DaffneVargas29" target="_blank">GitHub</a>
+        </div>
       </div>
     </section>
   </main>
