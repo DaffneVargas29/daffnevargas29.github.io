@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daffne Vargas | Business Intelligence & Financial Analytics</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --card: #151d34;
+      --text: #f4f7fb;
+      --muted: #aeb8c8;
+      --accent: #38bdf8;
+      --accent-2: #2563eb;
+      --border: rgba(255,255,255,0.09);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top left, rgba(56,189,248,.16), transparent 34%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(11,16,32,.78);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo { font-weight: 800; letter-spacing: .4px; }
+    .logo span { color: var(--accent); }
+
+    .nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      min-height: 86vh;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 44px;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: .96;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 19px;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      font-weight: 700;
+    }
+
+    .btn.secondary { background: transparent; color: var(--muted); }
+
+    .profile-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.26);
+    }
+
+    .profile-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+    }
+
+    section { padding: 70px 0; }
+    .section-title { font-size: 38px; margin-bottom: 10px; }
+    .section-subtitle { color: var(--muted); margin-bottom: 28px; max-width: 700px; }
+    .slash { color: var(--accent); }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+    .card {
+      background: rgba(21,29,52,.78);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      min-height: 160px;
+    }
+
+    .card h3 { margin-bottom: 10px; font-size: 20px; }
+    .card p { color: var(--muted); font-size: 15px; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { font-size: 12px; color: #cfeeff; border: 1px solid rgba(56,189,248,.25); padding: 6px 9px; border-radius: 999px; background: rgba(56,189,248,.07); }
+
+    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .skill { padding: 18px; border-radius: 18px; background: var(--card); border: 1px solid var(--border); color: var(--text); font-weight: 700; }
+    .skill small { display: block; color: var(--accent); margin-top: 4px; font-weight: 600; }
+
+    .timeline { display: grid; gap: 16px; }
+    .timeline-item { border-left: 3px solid var(--accent); padding: 18px 22px; background: rgba(21,29,52,.6); border-radius: 0 18px 18px 0; }
+    .timeline-item span { color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 1px; }
+    .timeline-item p { color: var(--muted); margin-top: 8px; }
+
+    footer { padding: 46px 0; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+
+    @media (max-width: 860px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .skills { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Daffne<span>Vargas</span></div>
+        <div class="nav-links">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Business Intelligence · Finanzas · Datos</div>
+        <h1>Hola, soy<br>Daffne Vargas</h1>
+        <p>Estudiante de Ingeniería Comercial en la UTFSM, orientada al análisis de datos, Business Intelligence, finanzas y automatización de procesos. Me interesa transformar información en indicadores útiles para la toma de decisiones.</p>
+        <div class="buttons">
+          <a class="btn" href="#proyectos">Ver proyectos</a>
+          <a class="btn secondary" href="mailto:daffnevargas29@gmail.com">Contactar</a>
+        </div>
+      </div>
+      <div class="profile-card">
+        <img src="profile.jpg" alt="Foto profesional de Daffne Vargas" />
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <h2 class="section-title"><span class="slash">/</span> Sobre mí</h2>
+      <p class="section-subtitle">Busco construir un perfil profesional fuerte para áreas de banca, reporting, análisis financiero y Business Intelligence.</p>
+      <div class="grid">
+        <div class="card"><h3>Enfoque profesional</h3><p>Análisis de datos, reporting ejecutivo, indicadores de gestión y apoyo a decisiones de negocio.</p></div>
+        <div class="card"><h3>Perfil académico</h3><p>Estudiante de Ingeniería Comercial en la Universidad Técnica Federico Santa María.</p></div>
+        <div class="card"><h3>Objetivo</h3><p>Prepararme para práctica y primeras experiencias en banca, finanzas, BI o analítica comercial.</p></div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <h2 class="section-title"><span class="slash">/</span> Proyectos destacados</h2>
+      <p class="section-subtitle">Estos proyectos se irán completando con dashboards, análisis universitarios y casos de negocio.</p>
+      <div class="grid">
+        <article class="card"><h3>Dashboard financiero</h3><p>Visualización de KPIs financieros para seguimiento de ingresos, costos y rentabilidad.</p><div class="tag-row"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Finanzas</span></div></article>
+        <article class="card"><h3>Análisis comercial</h3><p>Reporte de ventas, clientes y productos para detectar patrones y oportunidades de mejora.</p><div class="tag-row"><span class="tag">Excel</span><span class="tag">KPIs</span><span class="tag">BI</span></div></article>
+        <article class="card"><h3>Base de datos SQL</h3><p>Consultas para limpiar, ordenar y analizar información de negocio desde una base relacional.</p><div class="tag-row"><span class="tag">SQL</span><span class="tag">Datos</span><span class="tag">Reporting</span></div></article>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <h2 class="section-title"><span class="slash">/</span> Habilidades</h2>
+      <p class="section-subtitle">Herramientas y áreas que estoy fortaleciendo para mi perfil profesional.</p>
+      <div class="skills">
+        <div class="skill">Excel <small>Intermedio/Avanzado</small></div>
+        <div class="skill">Power BI <small>Dashboards</small></div>
+        <div class="skill">SQL <small>Consultas y datos</small></div>
+        <div class="skill">Python <small>En aprendizaje</small></div>
+        <div class="skill">Finanzas <small>Análisis</small></div>
+        <div class="skill">Contabilidad <small>Gestión</small></div>
+        <div class="skill">Reporting <small>KPIs</small></div>
+        <div class="skill">Comunicación <small>Presentaciones</small></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title"><span class="slash">/</span> Trayectoria</h2>
+      <div class="timeline">
+        <div class="timeline-item"><span>ACTUALIDAD</span><h3>Ingeniería Comercial · UTFSM</h3><p>Formación en economía, gestión, contabilidad, datos y análisis para negocios.</p></div>
+        <div class="timeline-item"><span>EN DESARROLLO</span><h3>Portafolio de proyectos</h3><p>Construcción de proyectos en Excel, Power BI, SQL y análisis financiero para práctica profesional.</p></div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2 class="section-title"><span class="slash">/</span> Contacto</h2>
+      <p class="section-subtitle">Disponible para conversar sobre práctica, proyectos de análisis de datos, BI, finanzas y oportunidades laborales.</p>
+      <div class="buttons">
+        <a class="btn" href="mailto:daffnevargas29@gmail.com">daffnevargas29@gmail.com</a>
+        <a class="btn secondary" href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">LinkedIn</a>
+        <a class="btn secondary" href="https://github.com/DaffneVargas29" target="_blank">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Daffne Vargas · Business Intelligence & Financial Analytics
+  </footer>
+</body>
+</html>
