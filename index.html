@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daffne Vargas | BI & Financial Analytics</title>
+  <title>Daffne Vargas | Business Intelligence & Financial Analytics</title>
   <style>
     :root {
-      --bg: #070b16;
-      --bg-2: #0b1224;
-      --card: rgba(18, 28, 52, 0.82);
-      --card-2: rgba(12, 19, 37, 0.92);
-      --text: #f5f7fb;
-      --muted: #aab6c8;
-      --soft: #dbeafe;
-      --accent: #38bdf8;
-      --accent-2: #2563eb;
-      --accent-3: #7dd3fc;
-      --border: rgba(255,255,255,.10);
-      --shadow: 0 30px 90px rgba(0,0,0,.35);
+      --bg: #050b16;
+      --bg2: #081426;
+      --card: rgba(14, 27, 50, 0.78);
+      --card2: rgba(18, 34, 63, 0.92);
+      --line: rgba(96, 165, 250, 0.24);
+      --text: #f8fbff;
+      --muted: #b7c4d8;
+      --blue: #1e88ff;
+      --cyan: #38bdf8;
+      --green: #22c55e;
+      --yellow: #facc15;
+      --purple: #8b5cf6;
+      --pink: #fb7185;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .42);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,13 +27,12 @@
 
     body {
       font-family: Inter, Arial, sans-serif;
-      background:
-        radial-gradient(circle at 12% 12%, rgba(56,189,248,.20), transparent 26%),
-        radial-gradient(circle at 80% 2%, rgba(37,99,235,.20), transparent 28%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
       color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(30,136,255,.20), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(56,189,248,.12), transparent 32%),
+        linear-gradient(180deg, #030815 0%, #071224 45%, #030815 100%);
+      line-height: 1.6;
     }
 
     body::before {
@@ -43,135 +44,354 @@
         linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      mask-image: linear-gradient(to bottom, black 0%, transparent 78%);
     }
 
     a { color: inherit; text-decoration: none; }
-    .container { width: min(1180px, 92%); margin: auto; }
+    .container { width: min(1180px, 92%); margin: 0 auto; }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 50;
+      background: rgba(3, 8, 21, .80);
       backdrop-filter: blur(18px);
-      background: rgba(7,11,22,.78);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
-    .logo { font-weight: 900; letter-spacing: .4px; font-size: 18px; }
-    .logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: 14px; }
-    .nav-links a:hover { color: var(--accent); }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo { font-size: 21px; font-weight: 900; letter-spacing: -.4px; }
+    .logo span { color: var(--cyan); }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: var(--muted); }
+    .nav-links a { position: relative; transition: .2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -18px;
+      height: 3px;
+      background: var(--blue);
+      border-radius: 999px;
+    }
+
+    .download {
+      border: 1px solid rgba(56,189,248,.55);
+      color: #dff6ff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 800;
+      background: rgba(30,136,255,.08);
+    }
 
     .hero {
-      min-height: 92vh;
+      min-height: 86vh;
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 58px;
+      grid-template-columns: 1fr .92fr;
+      gap: 70px;
       align-items: center;
-      padding: 84px 0 64px;
+      padding: 56px 0 28px;
     }
 
     .eyebrow {
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: 4px;
+      color: var(--cyan);
       text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 900;
       font-size: 13px;
       margin-bottom: 22px;
     }
 
     h1 {
-      font-size: clamp(48px, 7vw, 88px);
-      line-height: .95;
-      letter-spacing: -2.8px;
-      margin-bottom: 24px;
+      font-size: clamp(46px, 6.5vw, 76px);
+      line-height: .98;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
     }
 
-    .hero p { color: var(--soft); font-size: 19px; max-width: 680px; margin-bottom: 30px; }
-    .gradient-text { background: linear-gradient(135deg, #fff, var(--accent-3)); -webkit-background-clip: text; color: transparent; }
+    h1 span { color: var(--blue); }
+    .hero-text { max-width: 610px; color: var(--muted); font-size: 18px; margin-bottom: 28px; }
 
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 14px; }
     .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 13px 19px; border-radius: 999px;
-      border: 1px solid rgba(56,189,248,.28);
-      background: linear-gradient(135deg, var(--accent-2), var(--accent));
-      font-weight: 800; box-shadow: 0 16px 42px rgba(37,99,235,.24);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(56,189,248,.30);
+      font-weight: 900;
+      background: linear-gradient(135deg, #1768ff, #38bdf8);
+      box-shadow: 0 18px 40px rgba(30,136,255,.28);
     }
-    .btn.secondary { background: rgba(255,255,255,.03); color: var(--soft); box-shadow: none; }
+    .btn.secondary { background: rgba(255,255,255,.03); box-shadow: none; color: var(--text); }
 
-    .profile-wrap { position: relative; }
-    .profile-wrap::before {
-      content: ""; position: absolute; inset: -24px; z-index: -1;
-      border-radius: 36px; background: linear-gradient(135deg, rgba(56,189,248,.28), transparent 55%);
-      filter: blur(3px);
+    .socials { display: flex; gap: 12px; margin-top: 22px; }
+    .socials a {
+      width: 44px; height: 44px; display: grid; place-items: center;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.10);
+      border-radius: 12px; color: var(--text); font-weight: 900;
     }
-    .profile-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
-      border: 1px solid var(--border); border-radius: 30px; padding: 24px;
-      box-shadow: var(--shadow);
+
+    .hero-card {
+      border: 1px solid rgba(56,189,248,.35);
+      background: linear-gradient(180deg, rgba(30,136,255,.18), rgba(18,34,63,.55));
+      border-radius: 26px;
+      padding: 18px;
+      box-shadow: var(--shadow), 0 0 40px rgba(30,136,255,.18);
+      position: relative;
+      overflow: hidden;
     }
-    .profile-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px; border: 1px solid var(--border); }
-
-    .mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
-    .stat { background: rgba(255,255,255,.04); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
-    .stat strong { display: block; font-size: 22px; color: var(--accent); }
-    .stat span { font-size: 12px; color: var(--muted); }
-
-    section { padding: 82px 0; }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin-bottom: 30px; }
-    .section-title { font-size: clamp(34px, 4vw, 46px); letter-spacing: -1px; }
-    .section-subtitle { color: var(--muted); max-width: 720px; }
-    .slash { color: var(--accent); }
-
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .card {
-      background: var(--card); border: 1px solid var(--border); border-radius: 24px;
-      padding: 24px; min-height: 180px; box-shadow: 0 18px 55px rgba(0,0,0,.16);
-      transition: transform .25s ease, border-color .25s ease;
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px auto;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(56,189,248,.28), transparent 70%);
     }
-    .card:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.36); }
-    .card h3 { margin-bottom: 10px; font-size: 21px; }
-    .card p { color: var(--muted); font-size: 15px; }
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 1.18/1;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.10);
+      display: block;
+    }
 
-    .icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px; background: rgba(56,189,248,.12); color: var(--accent); margin-bottom: 16px; font-weight: 900; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-    .tag { font-size: 12px; color: #d9f4ff; border: 1px solid rgba(56,189,248,.25); padding: 6px 10px; border-radius: 999px; background: rgba(56,189,248,.08); }
+    .profile-icons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .profile-icon {
+      text-align: center;
+      padding: 14px 8px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      background: rgba(4,12,27,.50);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .profile-icon strong { display: block; color: var(--text); font-size: 13px; margin-top: 5px; }
+    .profile-icon .big { font-size: 23px; }
 
-    .project-card { padding: 0; overflow: hidden; }
+    .value-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: -12px 0 46px;
+    }
+    .value-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(14,27,50,.58);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .value-card .ico { font-size: 25px; color: var(--blue); }
+    .value-card h4 { font-size: 14px; margin-bottom: 4px; }
+    .value-card p { color: var(--muted); font-size: 12px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 52px;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(96,165,250,.28);
+      background: linear-gradient(135deg, rgba(30,136,255,.13), rgba(255,255,255,.03));
+    }
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 12px;
+      border-right: 1px solid rgba(255,255,255,.08);
+    }
+    .stat:last-child { border-right: none; }
+    .stat .circle {
+      width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center;
+      background: rgba(30,136,255,.14); color: var(--cyan); font-size: 26px;
+    }
+    .stat strong { display: block; font-size: 26px; }
+    .stat span { color: var(--muted); font-size: 13px; }
+
+    section { padding: 44px 0; }
+    .section-title {
+      font-size: 23px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: "";
+      width: 4px; height: 20px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 12px var(--blue);
+    }
+    .section-subtitle { color: var(--muted); max-width: 760px; margin-bottom: 22px; }
+
+    .two-col { display: grid; grid-template-columns: .82fr 1.18fr; gap: 36px; align-items: start; }
+    .about p { color: var(--muted); margin-bottom: 18px; }
+    .checks { list-style: none; display: grid; gap: 11px; color: var(--muted); }
+    .checks li::before { content: "✓"; color: var(--cyan); font-weight: 900; margin-right: 8px; }
+
+    .quote {
+      margin-top: 22px;
+      border: 1px solid rgba(56,189,248,.22);
+      background: rgba(56,189,248,.06);
+      border-radius: 16px;
+      padding: 18px;
+      color: #d9f7ff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .skill {
+      border: 1px solid rgba(255,255,255,.09);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .skill-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .skill .icon {
+      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px;
+      background: rgba(30,136,255,.14); font-size: 22px;
+    }
+    .skill strong { display: block; }
+    .dots { display: flex; gap: 5px; }
+    .dot { width: 10px; height: 7px; border-radius: 999px; background: rgba(96,165,250,.18); }
+    .dot.on { background: var(--blue); box-shadow: 0 0 9px rgba(30,136,255,.55); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .project {
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(18,34,63,.92), rgba(8,20,38,.78));
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 55px rgba(0,0,0,.22);
+      transition: .22s;
+    }
+    .project:hover { transform: translateY(-5px); border-color: rgba(56,189,248,.42); }
+    .project.featured { border-color: rgba(34,197,94,.46); }
     .project-img {
-      height: 150px; background:
-        linear-gradient(135deg, rgba(56,189,248,.18), rgba(37,99,235,.10)),
-        repeating-linear-gradient(90deg, rgba(255,255,255,.06) 0 1px, transparent 1px 26px);
-      border-bottom: 1px solid var(--border); display: grid; place-items: center; color: var(--accent-3); font-weight: 900; letter-spacing: 2px;
+      height: 132px;
+      background:
+        linear-gradient(135deg, rgba(56,189,248,.18), rgba(34,197,94,.08)),
+        repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 1px, transparent 1px 28px),
+        radial-gradient(circle at 30% 40%, rgba(30,136,255,.22), transparent 55%);
+      display: grid;
+      place-items: center;
+      color: #e0f2fe;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-align: center;
+      padding: 10px;
     }
-    .project-body { padding: 24px; }
+    .project-body { padding: 18px; }
+    .project-body h3 { font-size: 18px; margin-bottom: 8px; }
+    .project-body p { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+    .tag {
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: #dff6ff;
+      border: 1px solid rgba(56,189,248,.28);
+      background: rgba(56,189,248,.08);
+    }
+    .project a { color: var(--cyan); font-weight: 900; font-size: 14px; }
 
-    .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-    .skill { padding: 18px; border-radius: 20px; background: var(--card); border: 1px solid var(--border); font-weight: 800; }
-    .skill small { display: block; color: var(--accent); margin-top: 5px; font-weight: 700; }
+    .soft-skills {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .soft {
+      text-align: center;
+      padding: 18px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(14,27,50,.58);
+    }
+    .soft .sicon { font-size: 28px; margin-bottom: 9px; color: var(--cyan); }
+    .soft strong { font-size: 13px; display: block; }
 
-    .timeline { display: grid; gap: 16px; }
-    .timeline-item { position: relative; border-left: 3px solid var(--accent); padding: 20px 24px; background: rgba(18,28,52,.72); border-radius: 0 20px 20px 0; }
-    .timeline-item span { color: var(--accent); font-size: 13px; font-weight: 900; letter-spacing: 1.6px; }
-    .timeline-item p { color: var(--muted); margin-top: 8px; }
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .timeline-item {
+      border: 1px solid rgba(255,255,255,.10);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      gap: 14px;
+    }
+    .timeline-item .badge {
+      width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px;
+      background: rgba(30,136,255,.14); color: var(--cyan); font-size: 24px;
+      flex: 0 0 auto;
+    }
+    .timeline-item p { color: var(--muted); font-size: 14px; }
+    .pill { font-size: 11px; color: var(--cyan); border: 1px solid rgba(56,189,248,.30); padding: 3px 8px; border-radius: 999px; margin-left: 8px; }
 
-    .contact-box {
-      background: linear-gradient(135deg, rgba(56,189,248,.14), rgba(37,99,235,.07));
-      border: 1px solid rgba(56,189,248,.22); border-radius: 28px; padding: 34px;
-      display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;
+    .contact {
+      margin: 38px 0 18px;
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr .7fr;
+      gap: 18px;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(135deg, rgba(30,136,255,.12), rgba(255,255,255,.03));
+      border-radius: 18px;
+      padding: 24px;
+    }
+    .contact p { color: var(--muted); }
+    .contact-links { display: grid; gap: 10px; color: var(--soft); }
+    .contact-links a { border: 1px solid rgba(255,255,255,.08); padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,.03); }
+
+    footer {
+      padding: 26px 0 40px;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.07);
+      margin-top: 30px;
     }
 
-    footer { padding: 42px 0; border-top: 1px solid var(--border); color: var(--muted); text-align: center; }
+    @media (max-width: 980px) {
+      .hero, .two-col, .contact { grid-template-columns: 1fr; }
+      .value-row, .stats, .skills-grid, .projects, .timeline { grid-template-columns: 1fr 1fr; }
+      .soft-skills { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: none; }
+    }
 
-    @media (max-width: 900px) {
-      .hero, .grid, .contact-box { grid-template-columns: 1fr; }
-      .skills { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 620px) {
       .nav-links { display: none; }
-      .mini-stats { grid-template-columns: 1fr; }
-      section { padding: 58px 0; }
+      .hero { padding-top: 44px; }
+      .value-row, .stats, .skills-grid, .projects, .timeline, .profile-icons { grid-template-columns: 1fr; }
+      h1 { font-size: 42px; }
+      .download { display: none; }
     }
   </style>
 </head>
@@ -186,6 +406,7 @@
           <a href="#habilidades">Habilidades</a>
           <a href="#trayectoria">Trayectoria</a>
           <a href="#contacto">Contacto</a>
+          <a class="download" href="#">Descargar CV ↓</a>
         </div>
       </nav>
     </div>
@@ -194,103 +415,371 @@
   <main class="container">
     <section class="hero" id="inicio">
       <div>
-        <div class="eyebrow">Business Intelligence · Finanzas · Datos</div>
-        <h1>Hola, soy<br><span class="gradient-text">Daffne Vargas</span></h1>
-        <p>Estudiante de Ingeniería Comercial en la UTFSM, orientada al análisis de datos, Business Intelligence, finanzas y automatización de procesos. Me interesa transformar información en indicadores útiles para la toma de decisiones.</p>
+        <div class="eyebrow">Business Intelligence · Finanzas · Análisis de Datos</div>
+        <h1>Transformo datos en decisiones <span>de valor.</span></h1>
+        <p class="hero-text">Estudiante de Ingeniería Comercial en la UTFSM, orientada al análisis de datos, Business Intelligence, finanzas y automatización de procesos. Me apasiona convertir información en insights que impulsen resultados y mejoren la toma de decisiones en el sector financiero y comercial.</p>
         <div class="buttons">
-          <a class="btn" href="#proyectos">Ver proyectos</a>
-          <a class="btn secondary" href="mailto:daffnevargas29@gmail.com">Contactar</a>
+          <a class="btn" href="#proyectos">Ver mis proyectos →</a>
+          <a class="btn secondary" href="mailto:daffnevargas29@gmail.com">Contactar ✉</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">in</a>
+          <a href="https://github.com/DaffneVargas29" target="_blank">GH</a>
+          <a href="mailto:daffnevargas29@gmail.com">✉</a>
         </div>
       </div>
-      <div class="profile-wrap">
-        <div class="profile-card">
-          <img src="daffne_github_profile.jpg" alt="Foto profesional de Daffne Vargas" />
-          <div class="mini-stats">
-            <div class="stat"><strong>BI</strong><span>Enfoque profesional</span></div>
-            <div class="stat"><strong>UTFSM</strong><span>Ingeniería Comercial</span></div>
-            <div class="stat"><strong>Data</strong><span>Finanzas & reporting</span></div>
-          </div>
+
+      <div class="hero-card">
+        <img src="daffne_github_profile.jpg" alt="Foto profesional de Daffne Vargas" />
+        <div class="profile-icons">
+          <div class="profile-icon"><div class="big">▰</div><strong>Análisis</strong>basado en datos</div>
+          <div class="profile-icon"><div class="big">◎</div><strong>Enfoque</strong>en resultados</div>
+          <div class="profile-icon"><div class="big">⚡</div><strong>Automatización</strong>de procesos</div>
+          <div class="profile-icon"><div class="big">◇</div><strong>Calidad</strong>y confidencialidad</div>
         </div>
       </div>
     </section>
+
+    <div class="value-row">
+      <div class="value-card"><div class="ico">▣</div><div><h4>Enfoque Analítico</h4><p>Decisiones basadas en datos e indicadores clave.</p></div></div>
+      <div class="value-card"><div class="ico">↗</div><div><h4>Orientación a Resultados</h4><p>Impacto medible en objetivos del negocio.</p></div></div>
+      <div class="value-card"><div class="ico">🔒</div><div><h4>Confidencialidad</h4><p>Manejo ético y responsable de información.</p></div></div>
+      <div class="value-card"><div class="ico">☷</div><div><h4>Trabajo Colaborativo</h4><p>Comunicación efectiva con equipos multidisciplinarios.</p></div></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="circle">🎓</div><div><strong>+10</strong><span>Proyectos académicos y personales</span></div></div>
+      <div class="stat"><div class="circle">▥</div><div><strong>4</strong><span>Áreas de expertise complementarias</span></div></div>
+      <div class="stat"><div class="circle">◇</div><div><strong>100%</strong><span>Compromiso con la calidad de los datos</span></div></div>
+      <div class="stat"><div class="circle">◎</div><div><strong>Enfoque</strong><span>Resultados medibles e impacto real</span></div></div>
+    </div>
 
     <section id="sobre-mi">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title"><span class="slash">/</span> Sobre mí</h2>
-          <p class="section-subtitle">Busco construir un perfil profesional fuerte para áreas de banca, reporting, análisis financiero y Business Intelligence.</p>
+      <div class="two-col">
+        <div class="about">
+          <h2 class="section-title">Sobre mí</h2>
+          <p>Me motiva convertir datos en información estratégica que genere impacto real en organizaciones. Busco oportunidades donde pueda aportar mis habilidades analíticas, mi capacidad de aprendizaje y mi compromiso con la excelencia.</p>
+          <ul class="checks">
+            <li>Pensamiento analítico y enfoque en soluciones.</li>
+            <li>Comunicación efectiva y trabajo en equipo.</li>
+            <li>Proactividad, organización y atención al detalle.</li>
+            <li>Adaptabilidad y aprendizaje continuo.</li>
+            <li>Ética, responsabilidad y compromiso.</li>
+          </ul>
+          <div class="quote">“Mi objetivo es aportar valor al negocio a través de datos confiables, automatización y análisis que impulsen decisiones acertadas.”</div>
         </div>
-      </div>
-      <div class="grid">
-        <div class="card"><div class="icon">01</div><h3>Enfoque profesional</h3><p>Análisis de datos, reporting ejecutivo, indicadores de gestión y apoyo a decisiones de negocio.</p></div>
-        <div class="card"><div class="icon">02</div><h3>Perfil académico</h3><p>Estudiante de Ingeniería Comercial en la Universidad Técnica Federico Santa María, con interés en finanzas y datos.</p></div>
-        <div class="card"><div class="icon">03</div><h3>Objetivo</h3><p>Prepararme para práctica y primeras experiencias en banca, finanzas, BI o analítica comercial.</p></div>
-      </div>
-    </section>
 
-    <section id="proyectos">
-      <div class="section-head">
-        <div>
-          <h2 class="section-title"><span class="slash">/</span> Proyectos destacados</h2>
-          <p class="section-subtitle">Proyectos pensados para mostrar criterio de negocio, análisis y visualización de información.</p>
+        <div id="habilidades">
+          <h2 class="section-title">Habilidades clave</h2>
+          <div class="skills-grid">
+            <div class="skill"><div class="skill-top"><div class="icon">📗</div><strong>Excel Avanzado</strong></div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span></div></div>
+            <div class="skill"><div class="skill-top"><div class="icon">📊</div><strong>Power BI</strong></div><div class="dots"><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+            <div class="skill">
+  <div class="skill-top">
+    <div class="icon">🗄</div>
+    <strong>SQL & Bases de Datos</strong>
+  </div>
+  <div class="dots">
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <div class="icon">🐍</div>
+    <strong>Python</strong>
+  </div>
+  <div class="dots">
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <div class="icon">⚙</div>
+    <strong>Automatización con VBA</strong>
+  </div>
+  <div class="dots">
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <div class="icon">📈</div>
+    <strong>Análisis Financiero</strong>
+  </div>
+  <div class="dots">
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <div class="icon">💬</div>
+    <strong>Comunicación Profesional</strong>
+  </div>
+  <div class="dots">
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<div class="skill">
+  <div class="skill-top">
+    <div class="icon">🧠</div>
+    <strong>Resolución de Problemas</strong>
+  </div>
+  <div class="dots">
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot on"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="proyectos">
+  <h2 class="section-title">Proyectos destacados</h2>
+  <p class="section-subtitle">
+    Proyectos enfocados en automatización, análisis financiero,
+    reporting y Business Intelligence aplicados a contextos reales.
+  </p>
+
+  <div class="projects">
+
+    <div class="project featured">
+      <div class="project-img">
+        AUTOMATIZACIÓN<br>MINIMARKET
+      </div>
+
+      <div class="project-body">
+        <h3>Sistema de gestión y automatización para minimarket</h3>
+
+        <p>
+          Desarrollo de una solución en Excel y VBA para controlar
+          ventas, reposición de productos, pérdidas, inversiones,
+          inventario y reportes automáticos para toma de decisiones.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Excel</span>
+          <span class="tag">VBA</span>
+          <span class="tag">Automatización</span>
+          <span class="tag">Inventario</span>
+          <span class="tag">Reporting</span>
         </div>
-      </div>
-      <div class="grid">
-        <article class="card project-card">
-          <div class="project-img">DASHBOARD</div>
-          <div class="project-body"><h3>Dashboard financiero</h3><p>Visualización de KPIs financieros para seguimiento de ingresos, costos y rentabilidad.</p><div class="tag-row"><span class="tag">Power BI</span><span class="tag">Excel</span><span class="tag">Finanzas</span></div></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-img">KPIs</div>
-          <div class="project-body"><h3>Análisis comercial</h3><p>Reporte de ventas, clientes y productos para detectar patrones y oportunidades de mejora.</p><div class="tag-row"><span class="tag">Excel</span><span class="tag">KPIs</span><span class="tag">BI</span></div></div>
-        </article>
-        <article class="card project-card">
-          <div class="project-img">SQL</div>
-          <div class="project-body"><h3>Base de datos SQL</h3><p>Consultas para limpiar, ordenar y analizar información de negocio desde una base relacional.</p><div class="tag-row"><span class="tag">SQL</span><span class="tag">Datos</span><span class="tag">Reporting</span></div></div>
-        </article>
-      </div>
-    </section>
 
-    <section id="habilidades">
-      <h2 class="section-title"><span class="slash">/</span> Habilidades</h2>
-      <p class="section-subtitle">Herramientas y áreas que estoy fortaleciendo para mi perfil profesional.</p>
-      <div class="skills">
-        <div class="skill">Excel <small>Intermedio/Avanzado</small></div>
-        <div class="skill">Power BI <small>Dashboards</small></div>
-        <div class="skill">SQL <small>Consultas y datos</small></div>
-        <div class="skill">Python <small>En aprendizaje</small></div>
-        <div class="skill">Finanzas <small>Análisis</small></div>
-        <div class="skill">Contabilidad <small>Gestión</small></div>
-        <div class="skill">Reporting <small>KPIs</small></div>
-        <div class="skill">Comunicación <small>Presentaciones</small></div>
+        <a href="#">Ver proyecto próximamente →</a>
       </div>
-    </section>
+    </div>
 
-    <section id="trayectoria">
-      <h2 class="section-title"><span class="slash">/</span> Trayectoria</h2>
-      <div class="timeline">
-        <div class="timeline-item"><span>ACTUALIDAD</span><h3>Ingeniería Comercial · UTFSM</h3><p>Formación en economía, gestión, contabilidad, datos y análisis para negocios.</p></div>
-        <div class="timeline-item"><span>EN DESARROLLO</span><h3>Portafolio de proyectos</h3><p>Construcción de proyectos en Excel, Power BI, SQL y análisis financiero para práctica profesional.</p></div>
+    <div class="project">
+      <div class="project-img">
+        DASHBOARD<br>FINANCIERO
       </div>
-    </section>
 
-    <section id="contacto">
-      <div class="contact-box">
-        <div>
-          <h2 class="section-title"><span class="slash">/</span> Contacto</h2>
-          <p class="section-subtitle">Disponible para conversar sobre práctica, proyectos de análisis de datos, BI, finanzas y oportunidades laborales.</p>
+      <div class="project-body">
+        <h3>Dashboard financiero interactivo</h3>
+
+        <p>
+          Visualización de indicadores financieros y comerciales para
+          seguimiento de ingresos, costos, márgenes y rendimiento.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">KPIs</span>
+          <span class="tag">Finanzas</span>
         </div>
-        <div class="buttons">
-          <a class="btn" href="mailto:daffnevargas29@gmail.com">Correo</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">LinkedIn</a>
-          <a class="btn secondary" href="https://github.com/DaffneVargas29" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    © 2026 Daffne Vargas · Business Intelligence & Financial Analytics
-  </footer>
+        <a href="#">Ver proyecto próximamente →</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-img">
+        SQL &<br>ANALYTICS
+      </div>
+
+      <div class="project-body">
+        <h3>Análisis de datos comerciales con SQL</h3>
+
+        <p>
+          Consultas y limpieza de datos orientadas a identificar
+          patrones, comportamiento de clientes y oportunidades
+          de mejora.
+        </p>
+
+        <div class="tags">
+          <span class="tag">SQL</span>
+          <span class="tag">Data Analytics</span>
+          <span class="tag">Reporting</span>
+        </div>
+
+        <a href="#">Ver proyecto próximamente →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="trayectoria">
+  <h2 class="section-title">Trayectoria</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="badge">🎓</div>
+
+      <div>
+        <h3>
+          Ingeniería Comercial · UTFSM
+          <span class="pill">Actualidad</span>
+        </h3>
+
+        <p>
+          Formación en economía, gestión, contabilidad,
+          finanzas, bases de datos, análisis y Business Intelligence.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="badge">📊</div>
+
+      <div>
+        <h3>
+          Desarrollo de proyectos analíticos
+          <span class="pill">Portfolio</span>
+        </h3>
+
+        <p>
+          Construcción de dashboards, automatizaciones,
+          reportes y análisis orientados al sector financiero
+          y comercial.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="badge">⚡</div>
+
+      <div>
+        <h3>
+          Automatización de procesos
+          <span class="pill">Excel + VBA</span>
+        </h3>
+
+        <p>
+          Implementación de herramientas para optimizar
+          control de ventas, inventario y reportes.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="badge">🏦</div>
+
+      <div>
+        <h3>
+          Objetivo profesional
+          <span class="pill">Banca & BI</span>
+        </h3>
+
+        <p>
+          Orientación hacia áreas de Business Intelligence,
+          análisis financiero, reporting y analítica bancaria.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacto">
+  <h2 class="section-title">Contacto</h2>
+
+  <div class="contact">
+
+    <div>
+      <h3>¿Conversemos?</h3>
+
+      <p>
+        Disponible para oportunidades de práctica,
+        proyectos de análisis de datos, BI,
+        reporting financiero y automatización.
+      </p>
+    </div>
+
+    <div class="contact-links">
+      <a href="mailto:daffnevargas29@gmail.com">
+        ✉ daffnevargas29@gmail.com
+      </a>
+
+      <a href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">
+        in LinkedIn
+      </a>
+
+      <a href="https://github.com/DaffneVargas29" target="_blank">
+        GH GitHub
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="mailto:daffnevargas29@gmail.com">
+        Contactar
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Daffne Vargas · Business Intelligence · Financial Analytics · Data Strategy
+</footer>
+
+</main>
 </body>
 </html>
