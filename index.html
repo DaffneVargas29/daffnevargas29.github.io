@@ -256,7 +256,43 @@
       padding: 18px;
       color: #d9f7ff;
     }
+    .about.centered{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
 
+.about-text.centered{
+  max-width:760px;
+  margin:0 auto 30px;
+  line-height:1.8;
+  font-size:20px;
+  color:var(--muted);
+}
+
+.checks.centered{
+  max-width:700px;
+  margin:0 auto 35px;
+  text-align:left;
+}
+
+.checks.centered li{
+  margin-bottom:18px;
+  font-size:18px;
+}
+
+.quote.centered{
+  max-width:760px;
+  margin:40px auto 0;
+  text-align:center;
+  font-size:30px;
+  line-height:1.7;
+  padding:40px;
+  border-radius:24px;
+  border:1px solid rgba(30,136,255,.35);
+  background:rgba(8,18,40,.75);
+  box-shadow:0 0 30px rgba(30,136,255,.12);
+}  
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -566,22 +602,37 @@
     </div>
 
     <section id="sobre-mi">
-      <div class="two-col">
-        <div class="about">
-          <h2 class="section-title">Sobre mí</h2>
-          <p>Me motiva convertir datos en información estratégica que genere impacto real en organizaciones. Busco oportunidades donde pueda aportar mis habilidades analíticas, mi capacidad de aprendizaje y mi compromiso con la excelencia.</p>
-          <ul class="checks">
-            <li>Pensamiento analítico y enfoque en soluciones.</li>
-            <li>Comunicación efectiva y trabajo en equipo.</li>
-            <li>Proactividad, organización y atención al detalle.</li>
-            <li>Adaptabilidad y aprendizaje continuo.</li>
-            <li>Ética, responsabilidad y compromiso.</li>
-          </ul>
-          <div class="quote">“Mi objetivo es aportar valor al negocio a través de datos confiables, automatización y análisis que impulsen decisiones acertadas.”</div>
-        </div>
-        
-        </div>
-        </section>
+
+  <div class="two-col">
+
+    <div class="about centered">
+
+      <h2 class="section-title">Sobre mí</h2>
+
+      <p class="about-text centered">
+        Me motiva convertir datos en información estratégica que genere impacto real en organizaciones.
+        Busco oportunidades donde pueda aportar mis habilidades analíticas,
+        mi capacidad de aprendizaje y mi compromiso con la excelencia.
+      </p>
+
+      <ul class="checks centered">
+        <li>✅ Pensamiento analítico y enfoque en soluciones.</li>
+        <li>✅ Comunicación efectiva y trabajo en equipo.</li>
+        <li>✅ Proactividad, organización y atención al detalle.</li>
+        <li>✅ Adaptabilidad y aprendizaje continuo.</li>
+        <li>✅ Ética, responsabilidad y compromiso.</li>
+      </ul>
+
+      <div class="quote centered">
+        “Mi objetivo es aportar valor al negocio a través de datos confiables,
+        automatización y análisis que impulsen decisiones acertadas.”
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
       <section id="habilidades">
   <h2 class="section-title">Habilidades clave</h2>
 
