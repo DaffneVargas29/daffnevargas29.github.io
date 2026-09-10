@@ -6,35 +6,66 @@
   <title>Daffne Vargas | Business Intelligence & Financial Analytics</title>
   <style>
     :root {
-      --bg: #050b16;
-      --bg2: #081426;
-      --card: rgba(14, 27, 50, 0.78);
-      --card2: rgba(18, 34, 63, 0.92);
-      --line: rgba(96, 165, 250, 0.24);
-      --text: #f8fbff;
-      --muted: #b7c4d8;
-      --soft: #e0f2fe;
-      --blue: #1e88ff;
-      --cyan: #38bdf8;
-      --green: #22c55e;
-      --yellow: #facc15;
-      --purple: #8b5cf6;
-      --pink: #fb7185;
-      --shadow: 0 24px 80px rgba(0, 0, 0, .42);
-    }
+  /* FONDOS */
+  --bg: #060D16;
+  --bg2: #0A1624;
+
+  /* TARJETAS */
+  --card: rgba(14, 28, 44, 0.82);
+  --card2: rgba(18, 35, 54, 0.96);
+
+  /* BORDES */
+  --line: rgba(148, 163, 184, 0.16);
+
+  /* TEXTOS */
+  --text: #F8FAFC;
+  --muted: #AEBCCB;
+  --soft: #E5EDF5;
+
+  /* COLORES DE MARCA */
+  --blue: #417C96;
+  --cyan: #78B4C4;
+
+  /* ACENTO ELEGANTE */
+  --gold: #D4B06A;
+  --gold-soft: #E8CE96;
+
+  /* COLORES SECUNDARIOS */
+  --green: #63A989;
+  --yellow: #D9BC68;
+  --purple: #8878B5;
+  --pink: #C7828C;
+
+  --shadow: 0 24px 70px rgba(0, 0, 0, .38);
+}
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: Inter, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 0%, rgba(30,136,255,.20), transparent 28%),
-        radial-gradient(circle at 90% 18%, rgba(56,189,248,.12), transparent 32%),
-        linear-gradient(180deg, #030815 0%, #071224 45%, #030815 100%);
-      line-height: 1.6;
-    }
+  font-family: Inter, Arial, sans-serif;
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(65, 124, 150, .14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(212, 176, 106, .065),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #050A11 0%,
+      #091522 48%,
+      #050A11 100%
+    );
+
+  line-height: 1.6;
+}
 
     body::before {
       content: "";
@@ -68,7 +99,7 @@
     }
 
     .logo { font-size: 21px; font-weight: 900; letter-spacing: -.4px; }
-    .logo span { color: var(--cyan); }
+    .logo span {color: var(--gold);}
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; color: var(--muted); }
     .nav-links a { position: relative; transition: .2s; }
     .nav-links a:hover { color: var(--text); }
@@ -235,12 +266,21 @@
       gap: 10px;
     }
     .section-title::before {
-      content: "";
-      width: 4px; height: 20px;
-      border-radius: 999px;
-      background: var(--blue);
-      box-shadow: 0 0 12px var(--blue);
-    }
+  content: "";
+  width: 4px;
+  height: 22px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    var(--gold),
+    var(--cyan)
+  );
+
+  box-shadow:
+    0 0 14px rgba(212,176,106,.22);
+}
     .section-subtitle { color: var(--muted); max-width: 760px; margin-bottom: 22px; }
 
     .two-col { display: grid; grid-template-columns: .82fr 1.18fr; gap: 36px; align-items: start; }
