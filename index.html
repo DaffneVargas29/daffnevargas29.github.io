@@ -801,58 +801,36 @@
 
 /* HERO PRINCIPAL */
 
-.bank-hero {
+.bank-hero{
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  align-items: center;
+  gap: 40px;
 
-  min-height: 700px;
+  margin-top: 26px;
+  padding: 50px 46px 38px;
 
   position: relative;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(520px, .95fr);
-
-  align-items: center;
-
-  gap: 54px;
-
-  padding:
-    70px 48px
-    64px;
-
-  margin-top: 28px;
+  overflow: hidden;
 
   border-radius: 28px;
-
-  border:
-    1px solid
-    rgba(227,183,91,.28);
+  border: 1px solid rgba(226,181,89,.26);
 
   background:
     linear-gradient(
       90deg,
-      rgba(3,18,32,.97) 0%,
-      rgba(4,27,47,.91) 46%,
-      rgba(4,24,42,.73) 100%
+      rgba(3,20,35,.97) 0%,
+      rgba(4,28,48,.90) 45%,
+      rgba(4,24,41,.62) 100%
     ),
     url("Fondo.png");
 
   background-size: cover;
-
   background-position: center;
 
-  box-shadow:
-    0 35px 90px
-    rgba(0,0,0,.42),
-
-    0 0 50px
-    rgba(227,183,91,.045);
-
-  overflow: visible;
-
+  box-shadow: 0 30px 70px rgba(0,0,0,.34);
 }
-
 
 /* GRADIENTE INTERNO */
 
@@ -890,16 +868,11 @@
    IZQUIERDA
 ====================== */
 
-.hero-copy {
-
+.hero-copy{
   position: relative;
-
-  z-index: 2;
-
-  max-width: 640px;
-
+  z-index: 4;
+  max-width: 610px;
 }
-
 
 .bank-hero .eyebrow {
 
@@ -916,55 +889,33 @@
   margin-bottom: 24px;
 
 }
+    
+.bank-hero h1{
+  max-width: 610px;
+  margin: 0 0 22px;
 
+  color: white;
 
-.bank-hero h1 {
-
-  max-width: 650px;
-
-  margin: 0 0 26px;
-
-  color: #ffffff;
-
-  font-size:
-    clamp(
-      52px,
-      5vw,
-      76px
-    );
-
-  line-height: .98;
-
-  letter-spacing: -3px;
-
+  font-size: clamp(46px, 4vw, 64px);
+  line-height: .99;
+  letter-spacing: -2.4px;
+  font-weight: 800;
 }
 
-
-.bank-hero h1 span {
-
+.bank-hero h1 span{
   display: block;
-
-  color: var(--gold);
-
+  color: #e2b55a;
 }
 
+.hero-description{
+  max-width: 555px;
+  margin-bottom: 24px;
 
-.hero-description {
+  color: #c9d4df;
 
-  max-width: 600px;
-
-  margin-bottom: 30px;
-
-  color: #d0dbe5;
-
-  font-size: 16px;
-
-  line-height: 1.75;
-
+  font-size: 14px;
+  line-height: 1.7;
 }
-
-
-
 /* BOTONES */
 
 .hero-actions {
@@ -1216,67 +1167,45 @@
    DERECHA
 ========================================= */
 
-.hero-visual {
-
+.hero-visual{
   position: relative;
-
-  z-index: 2;
+  z-index: 4;
 
   display: grid;
+  grid-template-columns: minmax(0,1fr) 175px;
+  gap: 12px;
 
-  grid-template-columns:
-    minmax(0,1.25fr)
-    minmax(190px,.55fr);
-
-  gap: 14px;
-
+  max-width: 560px;
+  justify-self: end;
   align-items: stretch;
-
 }
-
-
-
 /* FOTO */
 
-.portrait-card {
-
+.portrait-card{
   position: relative;
 
-  min-height: 455px;
+  height: 360px;
+  min-height: 360px;
 
   overflow: hidden;
 
-  border-radius: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(226,181,89,.34);
 
-  border:
-    1px solid
-    rgba(227,183,91,.35);
+  background: #0a1d2e;
 
-  background:
-    rgba(7,23,39,.65);
-
-  box-shadow:
-    0 24px 55px
-    rgba(0,0,0,.32);
-
+  box-shadow: 0 18px 40px rgba(0,0,0,.30);
 }
 
-
-.portrait-card img {
-
+.portrait-card img{
   width: 100%;
-
   height: 100%;
-
-  min-height: 455px;
-
-  object-fit: cover;
-
-  object-position:
-    center 28%;
+  min-height: 0;
 
   display: block;
 
+  object-fit: cover;
+  object-position: center 24%;
 }
 
 
@@ -1403,41 +1332,30 @@
 /* ==========================
    PANEL DERECHO DE FOTO
 ========================== */
-
-.hero-feature-panel {
+.hero-feature-panel{
+  height: 360px;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
 
-  padding:
-    18px 16px;
+  padding: 15px 13px;
 
-  border-radius: 18px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.11);
+  border-radius: 17px;
 
   background:
     linear-gradient(
       160deg,
-      rgba(14,46,72,.86),
-      rgba(7,26,44,.84)
+      rgba(17,52,78,.93),
+      rgba(6,27,46,.94)
     );
 
-  backdrop-filter:
-    blur(18px);
+  border: 1px solid rgba(255,255,255,.10);
 
-  box-shadow:
-    0 20px 45px
-    rgba(0,0,0,.20);
+  box-shadow: 0 16px 35px rgba(0,0,0,.20);
 
+  backdrop-filter: blur(14px);
 }
-
-
 .feature-row {
 
   display: grid;
@@ -3758,20 +3676,8 @@ header {
 ========================= -->
 
 <section class="bank-hero" id="inicio">
-
-  <!-- TEXTO DECORATIVO IZQUIERDO -->
-  <div class="hero-side-note hero-side-note-left">
-    <span>ANALYTICS</span>
-    <span>PEOPLE</span>
-    <span>BETTER</span>
-    <span>DECISIONS</span>
-    <div class="side-line"></div>
-  </div>
-
-
-  <!-- COLUMNA IZQUIERDA -->
+ >
   <div class="hero-copy">
-
     <div class="eyebrow">
       BUSINESS INTELLIGENCE · AUTOMATIZACIÓN · IA · DATA ANALYTICS
     </div>
@@ -3979,20 +3885,6 @@ header {
       </div>
 
     </aside>
-
-  </div>
-
-
-  <!-- TEXTO DECORATIVO DERECHO -->
-  <div class="hero-side-note hero-side-note-right">
-
-    <span>IDEAS</span>
-    <span>DATOS</span>
-    <span>ESTRATEGIA</span>
-    <span>IMPACTO</span>
-    <span>FUTURO</span>
-
-    <div class="side-line"></div>
 
   </div>
 
