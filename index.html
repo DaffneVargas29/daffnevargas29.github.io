@@ -275,19 +275,19 @@
 
     /* HERO VISUAL */
     .hero-visual{
-      position:relative;
-      z-index:3;
-      display:grid;
-      grid-template-columns:minmax(0,1fr) 176px;
-      gap:12px;
-      max-width:565px;
-      justify-self:end;
-      align-items:stretch;
-    }
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 185px;
+  gap:12px;
+  max-width:620px;
+  justify-self:end;
+  align-items:stretch;
+}
 
     .portrait{
       position:relative;
-      height:365px;
+      height:390px;
       border-radius:18px;
       overflow:hidden;
       border:1px solid rgba(227,183,91,.35);
@@ -325,7 +325,7 @@
     .portrait-label small{color:var(--gold-2);font-size:9px}
 
     .feature-panel{
-      height:365px;
+      height:390px;
       display:flex;
       flex-direction:column;
       justify-content:center;
@@ -546,7 +546,7 @@
     }
     .quote-box,
     .value-box{
-      min-height:74px;
+      min-height:96px;
       border-radius:15px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(7,31,52,.90);
@@ -570,8 +570,21 @@
       gap:8px;
     }
     .micro-value{text-align:center;color:#dce6ee;font-size:9.5px}
-    .micro-value b{display:block;color:var(--gold-2);font-size:15px;margin-bottom:2px}
+    .micro-value{
+  text-align:center;
+  color:#dce6ee;
+  font-size:10.5px;
+  font-weight:700;
+  padding:8px 4px;
+}
 
+.micro-value b{
+  display:block;
+  color:var(--gold-2);
+  font-size:30px;
+  line-height:1;
+  margin-bottom:8px;
+}
     /* LOWER SECTIONS */
     .lower-grid{
       display:grid;
@@ -662,7 +675,7 @@
     }
 
     /* RESPONSIVE */
-    @media(max-width:1200px){
+    @media(max-width:1000px){
       .nav-actions{display:none}
       .nav{grid-template-columns:auto 1fr}
       .hero{grid-template-columns:1fr}
@@ -676,8 +689,9 @@
       .nav{display:flex;justify-content:space-between}
       .hero{padding:42px 24px}
       .hero h1{font-size:46px}
-      .hero-visual{grid-template-columns:1fr}
-      .feature-panel{height:auto}
+      .hero-visual{grid-template-columns:minmax(0,1fr) 160px;max-width:680px;}
+      .portrait,
+      .feature-panel{height:340px;}
       .metrics{grid-template-columns:1fr 1fr}
       .metric{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
       .projects-grid,
@@ -687,7 +701,10 @@
       .contact-card{grid-template-columns:1fr}
       .value-box{grid-template-columns:repeat(2,1fr)}
     }
-
+    @media(max-width:650px){
+  .hero-visual{grid-template-columns:1fr;}
+  .feature-panel{height:auto;}
+}
     @media(max-width:560px){
       .site-shell{width:min(94%,100%)}
       .hero{padding:36px 18px;border-radius:20px}
@@ -721,7 +738,11 @@
         <a class="nav-icon" href="https://www.linkedin.com/in/daffne-vargas/" target="_blank" aria-label="LinkedIn">in</a>
         <a class="nav-icon" href="https://github.com/DaffneVargas29" target="_blank" aria-label="GitHub">GH</a>
         <a class="nav-icon" href="mailto:daffnevargas29@gmail.com" aria-label="Correo">✉</a>
-        <a class="cv-btn" href="#">Descargar CV <span>↓</span></a>
+        <a class="cv-btn"
+   href="CV_Daffne_Vargas.pdf"
+   download>
+  Descargar CV <span>↓</span>
+</a>
       </div>
     </nav>
   </div>
@@ -754,10 +775,14 @@
         </div>
 
         <div class="hero-socials">
-          <a href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">in</a>
-          <a href="https://github.com/DaffneVargas29" target="_blank">GH</a>
-          <a href="mailto:daffnevargas29@gmail.com">✉</a>
-        </div>
+  <a href="https://www.linkedin.com/in/daffne-vargas/" target="_blank">in</a>
+  <a href="https://github.com/DaffneVargas29" target="_blank">GH</a>
+  <a href="mailto:daffnevargas29@gmail.com">✉</a>
+</div>
+
+</div> <!-- CIERRA hero-copy -->
+
+<div class="hero-visual">
         
       <div class="hero-visual">
         <div class="portrait">
@@ -856,7 +881,6 @@
   <section class="content-section" id="proyectos">
     <div class="section-heading">
       <h2 class="section-title">Proyectos destacados</h2>
-      <a class="section-link" href="#todos-proyectos">Ver todos los proyectos →</a>
     </div>
     <p class="section-subtitle">
       Proyectos donde combino análisis de negocio, datos, automatización e inteligencia artificial
@@ -937,46 +961,6 @@
       <div class="micro-value"><b>◇</b>Ética</div>
     </div>
   </div>
-
-  <!-- TODOS LOS PROYECTOS -->
-  <section class="content-section" id="todos-proyectos">
-    <div class="section-heading">
-      <h2 class="section-title">Más proyectos</h2>
-    </div>
-
-    <div class="projects-grid">
-      <article class="project">
-        <div class="project-body">
-          <div class="project-kicker"><span class="chip">Power BI</span><span class="chip">Finanzas</span></div>
-          <h3 style="margin-top:12px">Dashboard de análisis financiero</h3>
-          <p>Visualización de ingresos, costos, márgenes y rendimiento para facilitar el seguimiento financiero y comercial.</p>
-          <a href="#">Ver proyecto →</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-body">
-          <div class="project-kicker"><span class="chip">SQL</span><span class="chip">Analytics</span></div>
-          <h3 style="margin-top:12px">Customer Analytics con SQL</h3>
-          <p>Exploración, limpieza y consulta de datos orientada a detectar patrones de comportamiento y oportunidades comerciales.</p>
-          <a href="#">Ver proyecto →</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-body">
-          <div class="project-kicker"><span class="chip">Próximo</span></div>
-          <h3 style="margin-top:12px">Proyecto Gálvez</h3>
-          <p>
-            Espacio reservado para incorporar el caso Gálvez con su objetivo, tu rol, herramientas utilizadas y resultado,
-            sin inventar información que todavía no esté definida en el portafolio.
-          </p>
-          <a href="#">Completar caso →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
   <!-- SOBRE MI -->
   <section class="content-section" id="sobre-mi">
     <div class="lower-grid">
