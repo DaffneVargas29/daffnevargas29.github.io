@@ -1861,22 +1861,1894 @@
   }
 
 }
+    /* ==========================================================
+   DISEÑO FINAL - PORTAFOLIO BANCA / BI / DATA
+   ========================================================== */
+
+
+/* ---------- GENERAL ---------- */
+
+body::before {
+  display: none;
+}
+
+body {
+  margin: 0;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #f7f9fc;
+
+  background:
+    linear-gradient(
+      rgba(3, 15, 27, .78),
+      rgba(3, 15, 27, .90)
+    ),
+    url("Fondo.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  line-height: 1.6;
+}
+
+
+.container {
+  width: min(1380px, 94%);
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  background:
+    rgba(3, 17, 30, .92);
+
+  border-bottom:
+    1px solid rgba(226, 181, 89, .20);
+
+  backdrop-filter:
+    blur(22px);
+
+  -webkit-backdrop-filter:
+    blur(22px);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, .18);
+}
+
+
+.main-nav {
+  min-height: 72px;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items: center;
+
+  gap: 45px;
+}
+
+
+/* LOGO */
+
+.logo {
+  color: #ffffff;
+
+  font-size: 23px;
+
+  font-weight: 900;
+
+  letter-spacing: -.7px;
+
+  white-space: nowrap;
+}
+
+
+.logo span {
+  color: #e2b55a;
+}
+
+
+/* LINKS */
+
+.nav-links {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 29px;
+
+  color: #c4ced9;
+
+  font-size: 13px;
+}
+
+
+.nav-links a {
+  position: relative;
+
+  padding:
+    26px 0 23px;
+
+  transition:
+    color .25s ease;
+}
+
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 16px;
+
+  width: 0;
+
+  height: 2px;
+
+  background:
+    #e2b55a;
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width .25s ease;
+}
+
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* ACCIONES DEL HEADER */
+
+.nav-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.nav-social {
+  width: 37px;
+
+  height: 37px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  background:
+    rgba(255,255,255,.045);
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  transition: .25s;
+}
+
+
+.nav-social:hover {
+  color: #e8c675;
+
+  border-color:
+    rgba(226,181,89,.45);
+
+  transform:
+    translateY(-2px);
+}
+
+
+.download {
+  min-height: 40px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-left: 6px;
+
+  padding:
+    0 18px;
+
+  border-radius: 10px;
+
+  color: #06121d;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3d58e,
+      #dca843
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  box-shadow:
+    0 8px 23px
+    rgba(226,181,89,.20);
+
+  transition: .25s;
+}
+
+
+.download:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(226,181,89,.30);
+}
+
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.bank-hero {
+
+  min-height: 650px;
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.02fr)
+    minmax(550px, .98fr);
+
+  align-items: center;
+
+  gap: 55px;
+
+  margin-top: 26px;
+
+  padding:
+    60px 58px
+    55px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(3,20,35,.97) 0%,
+      rgba(4,28,48,.91) 44%,
+      rgba(4,24,41,.66) 100%
+    ),
+
+    url("Fondo.png");
+
+  background-size:
+    cover;
+
+  background-position:
+    center;
+
+  border:
+    1px solid
+    rgba(226,181,89,.28);
+
+  box-shadow:
+    0 32px 80px rgba(0,0,0,.38);
+
+}
+
+
+/* LUZ INTERIOR */
+
+.bank-hero::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(51,120,157,.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(226,181,89,.07),
+      transparent 25%
+    );
+
+}
+
+
+
+/* ==========================================================
+   HERO IZQUIERDA
+   ========================================================== */
+
+.hero-copy {
+
+  position: relative;
+
+  z-index: 4;
+
+  max-width: 640px;
+
+}
+
+
+.bank-hero .eyebrow {
+
+  margin-bottom:
+    22px;
+
+  color:
+    #d9e8ef;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.4;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    3.5px;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+/* TITULO */
+
+.bank-hero h1 {
+
+  max-width:
+    650px;
+
+  margin:
+    0 0 24px;
+
+  color:
+    white;
+
+  font-size:
+    clamp(
+      50px,
+      4.3vw,
+      70px
+    );
+
+  line-height:
+    1.01;
+
+  letter-spacing:
+    -3px;
+
+  font-weight:
+    800;
+
+}
+
+
+.bank-hero h1 span {
+
+  display: block;
+
+  color:
+    #e2b55a;
+
+}
+
+
+/* DESCRIPCION */
+
+.hero-description {
+
+  max-width:
+    590px;
+
+  margin-bottom:
+    27px;
+
+  color:
+    #c9d4df;
+
+  font-size:
+    15px;
+
+  line-height:
+    1.7;
+
+}
+
+
+
+/* ==========================================================
+   BOTONES HERO
+   ========================================================== */
+
+.hero-actions {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  flex-wrap:
+    wrap;
+
+}
+
+
+.hero-btn {
+
+  min-height:
+    48px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+
+  padding:
+    0 23px;
+
+  border-radius:
+    10px;
+
+  font-size:
+    14px;
+
+  font-weight:
+    900;
+
+  transition:
+    .25s;
+
+}
+
+
+.hero-btn.primary {
+
+  color:
+    #071522;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #f1d28a,
+      #dca943
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.20);
+
+  box-shadow:
+    0 12px 28px
+    rgba(226,181,89,.19);
+
+}
+
+
+.hero-btn.primary:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 17px 35px
+    rgba(226,181,89,.28);
+
+}
+
+
+.hero-btn.secondary {
+
+  color:
+    white;
+
+  background:
+    rgba(4,21,37,.65);
+
+  border:
+    1px solid
+    rgba(226,181,89,.42);
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+
+.hero-btn.secondary:hover {
+
+  color:
+    #f0d58e;
+
+  background:
+    rgba(226,181,89,.08);
+
+  transform:
+    translateY(-3px);
+
+}
+
+
+
+/* ==========================================================
+   REDES
+   ========================================================== */
+
+.hero-socials {
+
+  display:
+    flex;
+
+  gap:
+    9px;
+
+  margin-top:
+    17px;
+
+}
+
+
+.hero-socials a {
+
+  width:
+    38px;
+
+  height:
+    38px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    10px;
+
+  background:
+    rgba(7,29,48,.78);
+
+  border:
+    1px solid
+    rgba(255,255,255,.10);
+
+  color:
+    white;
+
+  font-size:
+    12px;
+
+  font-weight:
+    900;
+
+  transition:
+    .25s;
+
+}
+
+
+.hero-socials a:hover {
+
+  color:
+    #e2b55a;
+
+  border-color:
+    rgba(226,181,89,.36);
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+
+/* ==========================================================
+   MINI VALORES
+   ========================================================== */
+
+.hero-mini-values {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    18px;
+
+  margin-top:
+    25px;
+
+}
+
+
+.mini-value {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+}
+
+
+.mini-icon {
+
+  width:
+    35px;
+
+  height:
+    35px;
+
+  flex:
+    0 0 auto;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    50%;
+
+  color:
+    #e2b55a;
+
+  background:
+    rgba(226,181,89,.07);
+
+  border:
+    1px solid
+    rgba(226,181,89,.37);
+
+}
+
+
+.mini-value strong {
+
+  display:
+    block;
+
+  color:
+    white;
+
+  font-size:
+    10px;
+
+}
+
+
+.mini-value span {
+
+  display:
+    block;
+
+  margin-top:
+    2px;
+
+  color:
+    #aebdca;
+
+  font-size:
+    9px;
+
+}
+
+
+
+/* ==========================================================
+   COLUMNA FOTO
+   ========================================================== */
+
+.hero-visual {
+
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    205px;
+
+  align-items:
+    stretch;
+
+  gap:
+    14px;
+
+}
+
+
+.portrait-card {
+
+  position:
+    relative;
+
+  height:
+    405px;
+
+  min-height:
+    405px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    18px;
+
+  border:
+    1px solid
+    rgba(226,181,89,.38);
+
+  background:
+    #0a1d2e;
+
+  box-shadow:
+    0 22px 55px
+    rgba(0,0,0,.35);
+
+}
+
+
+.portrait-card img {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  min-height:
+    0;
+
+  display:
+    block;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center 27%;
+
+}
+
+
+.portrait-card::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  pointer-events:
+    none;
+
+  background:
+
+    linear-gradient(
+      to top,
+      rgba(2,13,22,.69),
+      transparent 38%
+    );
+
+}
+
+
+
+/* NOMBRE */
+
+.portrait-name {
+
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  left:
+    18px;
+
+  bottom:
+    17px;
+
+  width:
+    225px;
+
+  padding:
+    12px 15px;
+
+  border-radius:
+    11px;
+
+  background:
+    rgba(3,17,29,.82);
+
+  border:
+    1px solid
+    rgba(255,255,255,.16);
+
+  backdrop-filter:
+    blur(13px);
+
+}
+
+
+.portrait-name strong {
+
+  display:
+    block;
+
+  margin-bottom:
+    3px;
+
+  color:
+    white;
+
+  font-size:
+    16px;
+
+}
+
+
+.portrait-name span {
+
+  display:
+    block;
+
+  color:
+    #dce5ec;
+
+  font-size:
+    10px;
+
+}
+
+
+.portrait-name small {
+
+  color:
+    #e7c777;
+
+  font-size:
+    9px;
+
+}
+
+
+
+/* PALABRAS EN FOTO */
+
+.portrait-keywords {
+
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  top:
+    18px;
+
+  right:
+    18px;
+
+  display:
+    grid;
+
+  gap:
+    1px;
+
+  color:
+    rgba(255,255,255,.64);
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.7px;
+
+}
+
+
+
+/* ==========================================================
+   PANEL DERECHO
+   ========================================================== */
+
+.hero-feature-panel {
+
+  height:
+    405px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  padding:
+    18px 15px;
+
+  border-radius:
+    17px;
+
+  background:
+
+    linear-gradient(
+      160deg,
+      rgba(17,52,78,.93),
+      rgba(6,27,46,.94)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.11);
+
+  box-shadow:
+    0 18px 45px
+    rgba(0,0,0,.21);
+
+  backdrop-filter:
+    blur(16px);
+
+}
+
+
+.feature-row {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    34px 1fr;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  padding:
+    10px 0;
+
+}
+
+
+.feature-icon {
+
+  width:
+    34px;
+
+  height:
+    34px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    9px;
+
+  color:
+    #e2b55a;
+
+  background:
+    rgba(226,181,89,.08);
+
+  border:
+    1px solid
+    rgba(226,181,89,.14);
+
+  font-size:
+    15px;
+
+}
+
+
+.feature-row strong {
+
+  display:
+    block;
+
+  color:
+    white;
+
+  font-size:
+    11px;
+
+}
+
+
+.feature-row span {
+
+  display:
+    block;
+
+  margin-top:
+    1px;
+
+  color:
+    #aebdca;
+
+  font-size:
+    8.5px;
+
+  line-height:
+    1.35;
+
+}
+
+
+.feature-divider {
+
+  height:
+    1px;
+
+  margin:
+    9px 0 12px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(226,181,89,.36),
+      transparent
+    );
+
+}
+
+
+.feature-quote {
+
+  color:
+    #f0d48d;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-style:
+    italic;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.45;
+
+  text-align:
+    center;
+
+}
+
+
+
+/* ==========================================================
+   TEXTOS LATERALES
+   ========================================================== */
+
+.hero-side-note {
+
+  z-index:
+    5;
+
+  color:
+    rgba(220,230,238,.58);
+
+  font-size:
+    8px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    2.5px;
+
+}
+
+
+.hero-side-note-left {
+
+  left:
+    15px;
+
+  top:
+    280px;
+
+}
+
+
+.hero-side-note-right {
+
+  right:
+    16px;
+
+  top:
+    225px;
+
+}
+
+
+.side-line {
+
+  width:
+    30px;
+
+  height:
+    2px;
+
+  margin-top:
+    9px;
+
+  background:
+    #e2b55a;
+
+}
+
+
+
+/* ==========================================================
+   MÉTRICAS FLOTANTES
+   ========================================================== */
+
+.bank-metrics {
+
+  position:
+    relative;
+
+  z-index:
+    20;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    0;
+
+  margin:
+    -25px 24px 48px;
+
+  padding:
+    10px;
+
+  border-radius:
+    17px;
+
+  background:
+    rgba(7,31,52,.94);
+
+  border:
+    1px solid
+    rgba(226,181,89,.27);
+
+  box-shadow:
+    0 22px 52px
+    rgba(0,0,0,.31);
+
+  backdrop-filter:
+    blur(18px);
+
+}
+
+
+.bank-metric {
+
+  min-height:
+    77px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+  padding:
+    11px 17px;
+
+  border-right:
+    1px solid
+    rgba(255,255,255,.10);
+
+}
+
+
+.bank-metric:last-child {
+
+  border-right:
+    none;
+
+}
+
+
+.metric-icon {
+
+  width:
+    45px;
+
+  height:
+    45px;
+
+  flex:
+    0 0 auto;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    12px;
+
+  color:
+    #e2b55a;
+
+  background:
+    rgba(226,181,89,.08);
+
+  border:
+    1px solid
+    rgba(226,181,89,.13);
+
+  font-size:
+    19px;
+
+}
+
+
+.bank-metric strong {
+
+  display:
+    block;
+
+  color:
+    white;
+
+  font-size:
+    14px;
+
+}
+
+
+.bank-metric span {
+
+  display:
+    block;
+
+  color:
+    #aebdca;
+
+  font-size:
+    10px;
+
+}
+
+
+
+/* ==========================================================
+   TITULOS DE SECCION
+   ========================================================== */
+
+.section-title {
+
+  color:
+    white;
+
+  font-size:
+    25px;
+
+  font-weight:
+    800;
+
+}
+
+
+.section-title::before {
+
+  background:
+    #e2b55a;
+
+  box-shadow:
+    0 0 12px
+    rgba(226,181,89,.27);
+
+}
+
+
+
+/* ==========================================================
+   HABILIDADES - MÁS COMO EL MOCKUP
+   ========================================================== */
+
+#habilidades {
+
+  padding-top:
+    28px;
+
+}
+
+
+.skills-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(6, 1fr);
+
+  gap:
+    12px;
+
+  margin-top:
+    22px;
+
+}
+
+
+.skill-card {
+
+  min-height:
+    120px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    16px 10px;
+
+  border-radius:
+    14px;
+
+  text-align:
+    center;
+
+  background:
+    rgba(8,29,49,.88);
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  box-shadow:
+    0 10px 28px
+    rgba(0,0,0,.14);
+
+  transition:
+    .25s;
+
+}
+
+
+.skill-card:hover {
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(226,181,89,.35);
+
+  box-shadow:
+    0 15px 35px
+    rgba(0,0,0,.23);
+
+}
+
+
+.skill-card img {
+
+  width:
+    40px;
+
+  height:
+    40px;
+
+  margin-bottom:
+    9px;
+
+  object-fit:
+    contain;
+
+}
+
+
+.skill-card h3 {
+
+  margin-bottom:
+    3px;
+
+  color:
+    white;
+
+  font-size:
+    13px;
+
+}
+
+
+.skill-card p {
+
+  color:
+    #aebdca;
+
+  font-size:
+    10px;
+
+}
+
+
+
+/* ==========================================================
+   PROYECTOS
+   ========================================================== */
+
+.projects {
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    16px;
+
+}
+
+
+.project {
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13,41,64,.96),
+      rgba(5,24,41,.97)
+    );
+
+  border:
+    1px solid
+    rgba(255,255,255,.09);
+
+  border-radius:
+    16px;
+
+}
+
+
+.project.featured {
+
+  border-color:
+    rgba(226,181,89,.38);
+
+}
+
+
+.project-img {
+
+  height:
+    125px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(43,110,148,.65),
+      rgba(10,52,64,.67)
+    ),
+
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.06) 0 1px,
+      transparent 1px 30px
+    );
+
+  color:
+    white;
+
+}
+
+
+.project-body {
+
+  padding:
+    17px;
+
+}
+
+
+.project-body h3 {
+
+  color:
+    white;
+
+  font-size:
+    17px;
+
+}
+
+
+.project-body p {
+
+  color:
+    #adbdca;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.6;
+
+}
+
+
+.tag {
+
+  color:
+    #d8edf5;
+
+  border:
+    1px solid
+    rgba(100,188,220,.32);
+
+  background:
+    rgba(51,138,170,.08);
+
+}
+
+
+.project a {
+
+  color:
+    #e1bd6d;
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media(max-width:1200px) {
+
+  .main-nav {
+    grid-template-columns:
+      auto 1fr;
+  }
+
+  .nav-actions {
+    display:
+      none;
+  }
+
+  .bank-hero {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .hero-copy {
+
+    max-width:
+      760px;
+
+  }
+
+  .hero-visual {
+
+    max-width:
+      760px;
+
+  }
+
+  .hero-side-note {
+
+    display:
+      none;
+
+  }
+
+  .skills-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+  }
+
+}
+
+
+@media(max-width:800px) {
+
+  .nav-links {
+
+    display:
+      none;
+
+  }
+
+  .main-nav {
+
+    display:
+      flex;
+
+    justify-content:
+      space-between;
+
+  }
+
+  .bank-hero {
+
+    padding:
+      45px 25px 48px;
+
+  }
+
+  .bank-hero h1 {
+
+    font-size:
+      46px;
+
+  }
+
+  .hero-visual {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .hero-feature-panel {
+
+    height:
+      auto;
+
+  }
+
+  .bank-metrics {
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+  .bank-metric {
+
+    border-right:
+      none;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.08);
+
+  }
+
+  .skills-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+  .projects {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
+
+@media(max-width:520px) {
+
+  .bank-hero h1 {
+
+    font-size:
+      39px;
+
+  }
+
+  .bank-metrics {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .skills-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
 </style>  
 </head>
 <body>
   <header>
     <div class="container">
-      <nav>
-        <a class="logo" href="#inicio">Daffne<span>Vargas</span></a>
-        <div class="nav-links">
-          <a href="#sobre-mi">Sobre mí</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#trayectoria">Trayectoria</a>
-          <a href="#contacto">Contacto</a>
-          <a class="download" href="#">Descargar CV ↓</a>
-        </div>
-      </nav>
+     <nav class="main-nav">
+
+  <a class="logo" href="#inicio">
+    Daffne<span>Vargas</span>
+  </a>
+
+  <div class="nav-links">
+
+    <a href="#inicio" class="active">Inicio</a>
+
+    <a href="#sobre-mi">
+      Sobre mí
+    </a>
+
+    <a href="#proyectos">
+      Proyectos
+    </a>
+
+    <a href="#habilidades">
+      Habilidades
+    </a>
+
+    <a href="#trayectoria">
+      Trayectoria
+    </a>
+
+    <a href="#contacto">
+      Contacto
+    </a>
+
+  </div>
+
+
+  <div class="nav-actions">
+
+    <a
+      class="nav-social"
+      href="https://www.linkedin.com/in/daffne-vargas/"
+      target="_blank"
+      aria-label="LinkedIn">
+      in
+    </a>
+
+    <a
+      class="nav-social"
+      href="https://github.com/DaffneVargas29"
+      target="_blank"
+      aria-label="GitHub">
+      GH
+    </a>
+
+    <a
+      class="nav-social"
+      href="mailto:daffnevargas29@gmail.com"
+      aria-label="Correo">
+      ✉
+    </a>
+
+    <a class="download" href="#">
+      Descargar CV
+      <span>↓</span>
+    </a>
+
+  </div>
+
+</nav>
     </div>
   </header>
 
@@ -2141,9 +4013,9 @@
     </div>
 
     <div>
-      <strong>Proyectos reales</strong>
+      <strong>+3 Proyectos destacados</strong>
       <span>
-        Soluciones con aplicación práctica
+        Soluciones reales con impacto
       </span>
     </div>
 
@@ -2173,14 +4045,15 @@
     </div>
 
     <div>
-      <strong>BI + Data</strong>
+      <strong>Enfoque</strong>
       <span>
-        Tecnología aplicada al negocio
+        Business Intelligence y análisis de datos
       </span>
     </div>
 
   </div>
-  
+
+
   <div class="bank-metric">
 
     <div class="metric-icon">
@@ -2188,9 +4061,9 @@
     </div>
 
     <div>
-      <strong>Innovación</strong>
+      <strong>Compromiso</strong>
       <span>
-        Aprendizaje y mejora continua
+        Aprendizaje continuo y excelencia
       </span>
     </div>
 
